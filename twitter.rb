@@ -6,7 +6,7 @@ class TwitterApi
 
   def initialize
     keys = YAML.load_file('application.yml')
-    @clientz = Twitter::REST::Client.new do |config|
+    @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = keys['CONSUMER_KEY']
       config.consumer_secret     = keys['CONSUMER_SECRET']
       config.access_token        = keys['ACCESS_TOKEN']
@@ -15,7 +15,7 @@ class TwitterApi
   end
 
   def get_friends
-    @clientz.friends
+    @client.friends
   end
 
   def most_recent_friend
@@ -23,16 +23,17 @@ class TwitterApi
   end
 
   def find_user_for(username)
-    #find the twitter gem method that returns the correct user, given a username
-    @clientz.user(username)
+    @client.user(username)
   end
 
   def find_followers_for(username)
-    @clientz.followers(username).take(10)
+    @client.followers(username).take(10)
   end
 
   def homepage_timeline
-    @clientz.home_timeline
+    @client.home_timeline
   end
 
 end
+
+#PASS YOU BITCH
