@@ -36,14 +36,3 @@ class TwitterApi
   end
 
 end
-
-#Bonus:
-
-# uncomment out the following and read the bonus instructions.
-# remember to comment out the WebMock line of your spec_helper, as the instructions dictate.
-
-# tweet_client = TwitterApi.new
-# puts tweet_client.most_recent_friend
-# puts tweet_client.find_user_for("USERNAME HERE")
-# puts tweet_client.find_followers_for("USERNAME HERE")
-# puts tweet_client.homepage_timeline
